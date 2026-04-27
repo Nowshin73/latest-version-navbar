@@ -3,6 +3,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdPersonOutline } from "react-icons/md";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { TfiSearch } from "react-icons/tfi";
 import logo from './assets/nexlogo.png'
 const Navbar = () => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -10,7 +11,7 @@ const Navbar = () => {
     <header
       style={{
        
-        fontFamily: 'EuclidIgnited,sans-serif'
+        fontFamily: 'apple-ui,Times new roman, sans-serif'
       }}
       onMouseEnter={()=>setIsHovered(true)}
       onMouseLeave={()=>setIsHovered(false)}
@@ -22,11 +23,11 @@ const Navbar = () => {
 
             </div>
       <div className="header-top z-2 hidden text-sm mx-5 lg:flex flex-row items-center
-          flex-nowrap h-14"> 
+          flex-nowrap h-10"> 
         <div className="ht-left z-2 inline-flex flex-1 whitespace-nowrap 
         items-center text-left">
           <div className="ht-left-store-location">
-            <a href='' className='inline-flex gap-2 items-center cursor-pointer text-sm vertical-align-middle'>
+            <a href='#stores' className='inline-flex gap-2 items-center cursor-pointer text-sm '>
               <span><IoLocationOutline /></span>
               <span>Stores</span>
             </a>
@@ -47,7 +48,7 @@ const Navbar = () => {
           <div className="ht-right-cartlist pl-14 mt-[1.1rem]  ">
             <a href="" className='inline-block whitespace-nowrap tracking-tight box-border text-right items-center cursor-pointer vertical-align-middle'>
               <span className='cart-logo w-6 '><HiOutlineShoppingBag /></span>
-              <span className='relative left-[0.6rem] bottom-2 text-[0.7rem] h-[.9rem] w-[.9rem] leading-[0.9rem] bg-white text-black flex justify-center items-end rounded-[50%]'>0</span>
+              <span className={`relative left-[0.6rem] bottom-2 text-[0.7rem] h-[.9rem] w-[.9rem] leading-[0.9rem]  flex justify-center items-end rounded-[50%] ${isHovered? 'bg-black text-white' : 'bg-white text-black'}`}>0</span>
             </a>
           </div>
         </div>
@@ -56,20 +57,26 @@ const Navbar = () => {
         <div className="header-main-nav hidden">
 
         </div>
-        <div className="header-compressed relative z-2 mt-3 flex  h-32 flex-row items-center justify-between py-6 px-14 w-full">
+        <div className="header-compressed relative z-2  flex  h-20 flex-row items-center justify-between py-5 px-5 w-full">
           <div className="burger-btn cursor-pointer text-xl inline-flex items-center gap-5 vertical-middle"> 
             <a className='menu-link' href="">
               <span className='menu-icon text-4xl' ><RxHamburgerMenu/> </span>
             </a>
              <span>Menu</span>
           </div>
-          <div className="logo relative inline-flex items-center ">
-            <img src={logo} alt="logo" className='w-20 h-20' />
-            <span>Ecommerce</span>
+          <div className="logo relative -ml-12 inline-flex items-center vertical-middle gap-4">
+            <img src={logo} alt="logo" className='w-28 h-28' />
+            <span className='text-7xl font-stretch-100% '>Nexecom</span>
           </div>
-          <div className="search">
-            <input type="text" placeholder='Search for products, brands and more' className='search-input w-[20rem] h-10 rounded-md text-sm px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500' />
-          </div>
+          <div className="search-icon relative flex flex-row items-center vertical-middle">
+            <div className='mr-4 flex items-center'>
+              <a href="" className='inline-flex relative items-center vertical-middle '>
+                <span className='inline-block relative vertical-middle'>
+                  <TfiSearch className='text-3xl'/>
+                </span>
+              </a>
+            </div>
+            </div>
         </div>
         <div className="header-search-layer">
 
