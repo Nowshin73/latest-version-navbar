@@ -7,6 +7,7 @@ import { TfiSearch } from "react-icons/tfi";
 import logo from './assets/nexlogo.png'
 const Navbar = () => {
   const [isHovered, setIsHovered] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <header
       style={{
@@ -54,11 +55,19 @@ const Navbar = () => {
         </div>
       </div>
       <div className="header-bottom-hamburger z-2">
-        <div className="header-main-nav hidden">
-
+        <div className={`header-main-nav max-w-200 bg-white ${isMenuOpen ? 'block' : 'hidden'}`}>
+          <nav className='fixed top-0 left-0 w-[min(48rem,32dvw)] overflow-x-hidden overflow-y-auto max-w-none  z-4 bg-white ease-in transition-[left] duration-500   translate-3d h-dvh scroll-smooth'>
+             {/* top section */}
+             <div className="header-main-nav-top sticky top-0 
+             w-full flex items-center justify-between p-8
+             max-w-none z-5 bg-white transition-none h-24
+              border-b border-gray-100 overflow-x-hidden">
+              <a href="" className='js-close'></a>
+             </div>
+          </nav>
         </div>
         <div className="header-compressed relative z-2  flex  h-20 flex-row items-center justify-between py-5 px-5 w-full">
-          <div className="burger-btn cursor-pointer text-xl inline-flex items-center gap-5 vertical-middle"> 
+          <div onClick={()=>setIsMenuOpen(true)} className="burger-btn cursor-pointer text-xl inline-flex items-center gap-5 "> 
             <a className='menu-link' href="">
               <span className='menu-icon text-4xl' ><RxHamburgerMenu/> </span>
             </a>
