@@ -65,10 +65,13 @@ const Navbar = () => {
              w-full flex items-center justify-between p-5
              max-w-none z-5 bg-white transition-none 
               border-b border-gray-200 overflow-hidden">
-              <a href="" className='js-close ml-6 h-full inline-block decoration-0 items-center min-h-[4.8rem]'>
+              <a href="" className='js-close ml-6 h-full inline-block decoration-0 items-center '>
                 <span className='close-icon relative text-2xl'> <TfiClose/> </span>
               </a>
              </div>
+             <ul className="header-main-nav-middle w-full pt-3 overflow-visible min-h-[100dvh-30.5rem] transform-none">
+              <li className='menu-item px-9 w-full flex items-center justify-between'></li>
+             </ul>
           </nav>
         </div>
         <div className="header-compressed relative z-2  flex  h-20 flex-row items-center justify-between py-5 px-5 w-full">
