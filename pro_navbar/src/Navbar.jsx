@@ -5,6 +5,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiSearch } from "react-icons/tfi";
 import { TfiClose } from "react-icons/tfi";
+import { BsChevronRight } from "react-icons/bs";
 import logo from './assets/nexlogo.png'
 const Navbar = () => {
   const [isHovered, setIsHovered] = React.useState(false);
@@ -70,7 +71,10 @@ const Navbar = () => {
               </a>
              </div>
              <ul className="header-main-nav-middle w-full pt-3 overflow-visible min-h-[100dvh-30.5rem] transform-none">
-              <li className='menu-item px-9 w-full flex items-center justify-between'></li>
+              <li className='menu-item px-9 w-full text-xl flex items-center cursor-pointer justify-between'>
+                <span className=''>New In</span>
+                <span><BsChevronRight /></span>
+              </li>
              </ul>
           </nav>
         </div>
