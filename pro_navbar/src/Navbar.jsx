@@ -5,11 +5,39 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TfiSearch } from "react-icons/tfi";
 import { TfiClose } from "react-icons/tfi";
-import { BsChevronRight } from "react-icons/bs";
 import logo from './assets/nexlogo.png'
+import MenuItem from './components/menuItem';
+
 const Navbar = () => {
   const [isHovered, setIsHovered] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const categories = [
+  {
+    id: 1,
+    name: "Electronics",
+    sub: ["Mobile Phones", "Laptops", "Accessories"]
+  },
+  {
+    id: 2,
+    name: "Fashion",
+    sub: ["Men", "Women", "Shoes"]
+  },
+  {
+    id: 3,
+    name: "Home",
+    sub: ["Furniture", "Kitchen", "Decor"]
+  },
+  {
+    id: 4,
+    name: "Books",
+    sub: ["Fiction", "Non-Fiction", "Textbooks"]
+  },
+  {
+    id: 5,
+    name: "Beauty",
+    sub: ["Skincare", "Makeup", "Fragrance"]
+  }
+];
   return (
     <header
       style={{
@@ -70,11 +98,11 @@ const Navbar = () => {
                 <span className='close-icon relative text-2xl'> <TfiClose/> </span>
               </a>
              </div>
-             <ul className="header-main-nav-middle w-full pt-3 overflow-visible min-h-[100dvh-30.5rem] transform-none">
-              <li className='menu-item px-9 w-full text-xl flex items-center cursor-pointer justify-between'>
-                <span className=''>New In</span>
-                <span><BsChevronRight /></span>
-              </li>
+             <ul className="header-main-nav-middle w-full px-7 pt-3 overflow-visible min-h-[100dvh-30.5rem] transform-none">
+             {categories.map((cat, index) => 
+              (<MenuItem key={cat.id} category={cat}></MenuItem>)
+               )
+              }
              </ul>
           </nav>
         </div>
