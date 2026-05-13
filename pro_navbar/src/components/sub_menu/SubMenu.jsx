@@ -1,14 +1,16 @@
 import React from 'react'
 
-const SubMenu = () => {
+const SubMenu = ({ subItem }) => {
   return (
-    <nav className='absolute top-0 bottom-auto h-[calc(100dvh - 5.7rem)]  
-    block z-3 border-l-gray-200 opacity-100 pointer-events-auto 
-    left-[min(48rem,32dvw)] w-[min(48rem,32dvw)] bg-white box-border overflow-visible scroll-smooth'>
-      <ul>
-        
-      </ul>
-    </nav>
+   
+        <li className="submenu-list px-8 w-full flex items-center justify-between">
+          <div className='py-3 text-xl text-black flex items-center cursor-pointer justify-between w-full h-20'>
+            <a className='relative text-left' href="">
+              <span>{subItem}</span>
+            </a>
+          </div>
+        </li>
+      
   )
 }
 
